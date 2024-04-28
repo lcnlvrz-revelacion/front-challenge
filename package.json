@@ -2,6 +2,8 @@
   "name": "front-challenge",
   "private": true,
   "scripts": {
+    "dev:spa": "turbo dev:spa",
+    "dev:nextjs": "turbo dev:nextjs",
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",

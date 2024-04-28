@@ -1,81 +1,66 @@
-# Turborepo starter
+# Desafío
 
-This is an official starter Turborepo.
+El desafío consta de implementar una interfaz gráfica (gui) que permita interactuar con la api que se encuentra ya desarrollada dentro de `apps/api`. La documentación de esta api (swagger) se encuentra disponible en `http://localhost:3001/api`
 
-## Using this example
+> :Info: **Tiempo estimado**: ≈45 minutes
 
-Run the following command:
+Se espera que el candidato pueda implementar los componentes necesarios para:
 
-```sh
-npx create-turbo@latest
-```
+- Listar los libros disponibles en la API
+- Crear un formulario para la creación de libros
+- Actualizar un libro
+- Eliminar un libro
 
-## What's inside?
+## Stack flavors
 
-This Turborepo includes the following packages/apps:
+Dentro del folder apps se encuentra la posibilidad de poder implementar estos requerimientos usando:
 
-### Apps and Packages
+- Next.js
+- SPA (single page application)
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+Queda en la decision del candidato si ir con una opción u otra
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+## Librerías pre-builtin
 
-### Utilities
+De base en ambos stacks se encuentran instalados los siguientes paquetes:
 
-This Turborepo has some additional tools already setup for you:
+> :warning: **Si no usaste algunas de las librerías mencionadas abajo**: Puedes instalar una librería con la que tengas mayor experiencia o te sientas mas cómodo
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+- tailwind
+- react-hook-form (forms)
+- zod (schema validation)
+- react-query (data fetching manager)
 
-### Build
+## Objetivos
 
-To build all apps and packages, run the following command:
+Se espera que el candidato pueda implementar los requerimientos mencionados anteriormente utilizando patrones de data fetching, state management y reactividad como asi también para los componentes tener en cuenta conceptos de ux/ui (user experience)
 
-```
-cd my-turborepo
-pnpm build
-```
+También es importante que el candidato pueda ir narrando su linea de pensamientos a medida que va tomando las decisiones en su cabeza y las va implementando en el código
 
-### Develop
+## Setup
 
-To develop all apps and packages, run the following command:
+> :warning: **Asegurarse que docker engine se encuentre activo previo a correr los comandos**
+
+nodejs version: v18.17.0
 
 ```
-cd my-turborepo
-pnpm dev
+npm i
+
+# If you decided to go with SPA
+npm run dev:spa
+
+# If you decided to go with Next.js
+npm run dev:nextjs
 ```
 
-### Remote Caching
+Una vez ejecutado el comando, el cliente se encontrara up and running en el puerto `3002`. La api lo estará en el puerto `3001`
 
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+La documentación de esta api (swagger) se encuentra disponible en `http://localhost:3001/api`
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
+En el front de swagger uno puede interactuar con la api y de cierta manera generar fake data en caso de necesitarla para hidratar los componentes en el front
 
-```
-cd my-turborepo
-npx turbo login
-```
+## Interview requirements
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+Es importante que el candidato pueda compartir una ventana de su browser en donde se pueda visualizar el front que se encuentra corriendo en el puerto 3002
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+Para el seguimiento del código en tiempo real, se necesita que el candidato comparta una session mediante la extension de vscode liveshare

@@ -1,0 +1,14 @@
+{
+  "name": "infra",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "docker compose up || docker-compose up",
+    "dev:spa": "npm run dev",
+    "dev:nextjs": "npm run dev"
+  },
+  "keywords": [],
+  "author": "Luciano Alvarez",
+  "license": "ISC"
+}
